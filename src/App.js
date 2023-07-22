@@ -5,6 +5,7 @@ import './App.css';
 import Home from './page/home';
 import LoginPage from './page/LoginPage';
 import SignUpPage from './page/SignUpPage';
+import CartPage from './page/cartPage';
 
 import {
   createBrowserRouter,
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/Signup",
     element: <SignUpPage></SignUpPage>,
+  },
+  {// only for testing , after then createing page for cart
+    path: "/cart",
+    element: <CartPage></CartPage>,
   },
 ]);
 
