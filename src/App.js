@@ -6,7 +6,8 @@ import Home from './page/home';
 import LoginPage from './page/LoginPage';
 import SignUpPage from './page/SignUpPage';
 import CartPage from './page/cartPage';
-
+import Checkout from './page/checkout';
+import ProductDetail from './features/product-list/components/productDetails';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
   {// only for testing , after then createing page for cart
     path: "/cart",
     element: <CartPage></CartPage>,
+  },
+   {
+    path: "/checkout",
+    element: <Checkout></Checkout>,
+  },
+  {
+    path: "/product-detail",
+    element: <ProductDetail></ProductDetail>,
   },
 ]);
 
