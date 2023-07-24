@@ -7,7 +7,7 @@ import LoginPage from './page/LoginPage';
 import SignUpPage from './page/SignUpPage';
 import CartPage from './page/cartPage';
 import Checkout from './page/checkout';
-import ProductDetail from './features/product-list/components/productDetails';
+import ProductDetailPage from './page/productDetailPage';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/product-detail",
-    element: <ProductDetail></ProductDetail>,
+    element: <ProductDetailPage></ProductDetailPage>,
   },
 ]);
 

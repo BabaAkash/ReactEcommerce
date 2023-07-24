@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
-
+import {Link} from 'react-router-dom'
 const product = {
   name: 'Basic Tee 6-Pack',
   price: '$192',
@@ -55,6 +55,7 @@ const product = {
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 }
+
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
 function classNames(...classes) {
@@ -263,13 +264,14 @@ export default function ProductDetail() {
                   </div>
                 </RadioGroup>
               </div>
-
+               <Link to="/cart">
               <button
                 type="submit"
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-                Add to bag
+                Add to Cart
               </button>
+              </Link>
             </form>
           </div>
 
