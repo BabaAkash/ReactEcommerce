@@ -7,6 +7,14 @@ export  function fetchAllProducts() {
   }
   );
 }
+export  function fetchProductById(id) {
+  return new Promise(async(resolve) =>{
+    const response = await fetch('http://localhost:8080/products/'+id)
+    const data = await response.json()
+    resolve({data})
+  }
+  );
+}
 
 
 export  function fetchProductsByFilters(filter, sort,pagination) {
@@ -16,8 +24,8 @@ export  function fetchProductsByFilters(filter, sort,pagination) {
   for(let key in filter){
   
     const categoryValues = filter[key];
-    console.log(categoryValues)
-    if(categoryValues){
+    
+    if(categoryValues.length){
       const lastCategoryValues = categoryValues[categoryValues.length-1]
      queryString +=`${key}=${lastCategoryValues}&`  // http://localhost:8080/products?category=laptops
     }
@@ -31,6 +39,7 @@ export  function fetchProductsByFilters(filter, sort,pagination) {
   
     queryString +=`${key}=${pagination[key]}&` 
   }
+  console.log("api:",queryString)
   return new Promise(async(resolve) =>{
     const response = await fetch(`http://localhost:8080/products?${queryString}`)
     const data = await response.json()
@@ -40,4 +49,20 @@ export  function fetchProductsByFilters(filter, sort,pagination) {
   }
   );
 }
-
+ 
+export  function fetchCategories() {
+  return new Promise(async(resolve) =>{
+    const response = await fetch('http://localhost:8080/categories')
+    const data = await response.json()
+    resolve({data})
+  }
+  );
+}
+export  function fetchBrands() {
+  return new Promise(async(resolve) =>{
+    const response = await fetch('http://localhost:8080/brands')
+    const data = await response.json()
+    resolve({data})
+  }
+  );
+}
