@@ -14,11 +14,14 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Protected from './features/auth/component/Protected';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Home></Home>,
+    element:<Protected>
+      <Home></Home>
+    </Protected>,
   },
   {
     path: "/login",
@@ -30,15 +33,21 @@ const router = createBrowserRouter([
   },
   {// only for testing , after then createing page for cart
     path: "/cart",
-    element: <CartPage></CartPage>,
+    element: <Protected>
+      <CartPage></CartPage>
+    </Protected>,
   },
    {
     path: "/checkout",
-    element: <Checkout></Checkout>,
+    element: <Protected>
+      <Checkout></Checkout>
+    </Protected>,
   },
   {
     path: "/product-detail/:id",
-    element: <ProductDetailPage></ProductDetailPage>,
+    element: <Protected>
+      <ProductDetailPage></ProductDetailPage>
+    </Protected>,
   },
 ]);
 
